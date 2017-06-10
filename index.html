@@ -6,4 +6,7 @@ hello world
   console.log(canvas)
     var context = canvas.getContext("2d")
     console.log(context)
+   context.beginPath();
+    context.ellipse(100, 100, 50, 75, 45 * Math.PI/180, 0, 2 * Math.PI);
+context.stroke();
   </script> 
