@@ -1,38 +1,80 @@
 
-<canvas width = 600 height = 600>
+<canvas width = 1600 height = 1600>
   <script> 
   var canvas = document.querySelector("canvas") 
+  canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
   console.log(canvas)
     var context = canvas.getContext("2d")
     console.log(context)
    context.beginPath();
    
-   
+   function randomPoint(canvas){
+return [Math.random()*canvas.width, Math.random()*canvas.height];  
+  }
     
 
 
 
-context.beginPath();
-context.fill()
-context.ellipse(300, 300, 100, 100, 100 * Math.PI/180, 0, 2 * Math.PI);
-context.stroke(); context.fillStyle = 'yellow';
-context.fill()
-context.fillStyle = 'black';
-context.beginPath();
-context.fillRect(250, 250, 35, 35)
-context.beginPath();
-context.fillRect(310, 250, 35, 35)
 
-context.beginPath();
-context.fill()
-context.ellipse(300, 300, 50, 50, 50 * Math.PI/5, 0, 1 * Math.PI);
-context.stroke(); context.fillStyle = 'black';
 
 
 
 function hello() {
-context.fillRect()
-console.log('anything');
+
+ var canvas = document.querySelector("canvas") 
+ //console.log(canvas.width)
+  var p1x = Math.random()*canvas.width
+    var p1y = Math.random()*canvas.height
+  var p2x = Math.random()*canvas.width
+    var p2y = Math.random()*canvas.height
+	  var p3x = Math.random()*canvas.width
+    var p3y = Math.random()*canvas.height
+		var R = Math.floor(Math.random()*256)
+	 	var G = Math.floor(Math.random()*256)
+		var B = Math.floor(Math.random()*256)
+	//console.log(canvas)
+	
+	var context = canvas.getContext("2d")
+	context.strokeStyle = `rgb(${R},${G},${B})`
+	context.beginPath();
+	context.moveTo(p1x,p1y);
+	context.lineTo(300,150);
+	context.stroke();
+	
+	
+		context.beginPath();
+	context.moveTo(p1x,p1y);
+	context.lineTo(50,200);
+	context.stroke();
+
+	
+		context.beginPath();
+	context.moveTo(p1x,p1y);
+	context.lineTo(100,50);
+	context.stroke();
+	
+	context.beginPath();
+	context.moveTo(p1x,p1y);
+	context.lineTo(50,20);
+	context.stroke();
+	
+	context.beginPath();
+	context.moveTo(p1x,p1y);
+	context.lineTo(12,500);
+	context.stroke();
+
+	
+	context.beginPath()
+context.arc(p2x, p2y, 75, 0, Math.PI*2);
+context.stroke();
+
+context.beginPath
+context.rect(p3x,p3y,150,100);
+context.stroke();
+
+//context.fillRect()
+//console.log('anything');
 }
 setInterval(hello, 1000);
 
