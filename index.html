@@ -23,18 +23,15 @@ return [Math.random()*canvas.width, Math.random()*canvas.height];
 function hello() {
 
  var canvas = document.querySelector("canvas") 
- //console.log(canvas.width)
-  var p1x = Math.random()*canvas.width
-    var p1y = Math.random()*canvas.height
-  var p2x = Math.random()*canvas.width
-    var p2y = Math.random()*canvas.height
-	  var p3x = Math.random()*canvas.width
-    var p3y = Math.random()*canvas.height
+ 
+ var[p1x, p1y] = randomPoint(canvas)
+  var[p2x, p2y] = randomPoint(canvas)
+    var[p3x, p3y] = randomPoint(canvas)
+ 
 		var R = Math.floor(Math.random()*256)
 	 	var G = Math.floor(Math.random()*256)
 		var B = Math.floor(Math.random()*256)
-	//console.log(canvas)
-	
+
 	var context = canvas.getContext("2d")
 	context.strokeStyle = `rgb(${R},${G},${B})`
 	context.beginPath();
@@ -64,6 +61,20 @@ function hello() {
 	context.lineTo(12,500);
 	context.stroke();
 
+		context.beginPath();
+	context.moveTo(75,50);
+	context.lineTo(100,75);
+	context.lineTo(100, 25)
+	context.stroke();
+	
+	
+		context.beginPath();
+	context.moveTo(20,5);
+	context.lineTo(100,75);
+	context.lineTo(100, 25)
+	context.stroke();
+	
+
 	
 	context.beginPath()
 context.arc(p2x, p2y, 75, 0, Math.PI*2);
@@ -73,8 +84,7 @@ context.beginPath
 context.rect(p3x,p3y,150,100);
 context.stroke();
 
-//context.fillRect()
-//console.log('anything');
+
 }
 setInterval(hello, 1000);
 
